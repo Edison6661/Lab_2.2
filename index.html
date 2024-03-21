@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Combined Styles</title>
+  <style>
+    /* CSS for rounded corners */
+    #rcorners1, #rcorners2, #rcorners3, #rcorners4 {
+      width: 200px;
+      height: 150px;
+      padding: 20px;
+      background-color: #73AD21;
+    }
+
+    #rcorners1 {
+      border-radius: 15px 50px 30px 5px;
+    }
+
+    #rcorners2 {
+      border-radius: 15px 50px 30px;
+    }
+
+    #rcorners3 {
+      border-radius: 15px 50px;
+    }
+
+    #rcorners4 {
+      border-radius: 15px;
+    }
+
+    /* CSS for animation */
+    @keyframes example {
+      0% {background-color: red;}
+      25% {background-color: yellow;}
+      50% {background-color: blue;}
+      75% {background-color: green;}
+      100% {background-color: red;}
+    }
+
+    div {
+      width: 100px;
+      height: 100px;
+      position: relative;
+      background-color: red;
+      animation: example 4s infinite;
+    }
+
+    /* CSS for tooltips */
+    .tooltip {
+      position: relative;
+      display: inline-block;
+      border-bottom: 1px dotted black;
+    }
+
+    .tooltip .tooltiptext {
+      visibility: hidden;
+      width: 120px;
+      background-color: black;
+      color: #fff;
+      text-align: center;
+      padding: 5px 0;
+      border-radius: 6px;
+      position: absolute;
+      z-index: 1;
+    }
+
+    .tooltip:hover .tooltiptext {
+      visibility: visible;
+    }
+
+    /* Tooltip positions */
+    .tooltip .tooltiptext {
+      top: -5px;
+      left: 105%;
+    }
+
+    .tooltip .tooltiptext::after {
+      content: " ";
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      margin-left: -5px;
+      border-width: 5px;
+      border-style: solid;
+      border-color: black transparent transparent transparent;
+    }
+
+    .tooltip .tooltiptext {
+      opacity: 0;
+      transition: opacity 1s;
+    }
+
+    .tooltip:hover .tooltiptext {
+      opacity: 1;
+    }
+
+    /* Button Styles */
+    .button {
+      background-color: #04AA6D; /* Green */
+      border: none;
+      color: white;
+      padding: 15px 32px;
+      text-align: center;
+      text-decoration: none;
+      display: inline-block;
+      font-size: 16px;
+    }
+    .button1 {background-color: #04AA6D; font-size: 10px; padding: 10px 24px; border-radius: 2px;}
+    .button2 {background-color: #008CBA; font-size: 12px; padding: 12px 28px; border-radius: 4px;}
+    .button3 {background-color: #f44336; font-size: 16px; padding: 14px 40px; border-radius: 8px;}
+    .button4 {background-color: #e7e7e7; color: black; font-size: 20px; padding: 32px 16px; border-radius: 12px;}
+    .button5 {background-color: #555555; font-size: 24px; padding: 16px; border-radius: 50%;}
+    .button1:hover {background-color: #04AA6D; color: white;}
+    .button1:disabled {opacity: 0.6; cursor: not-allowed;}
+    .button2:hover {box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);}
+    .button {transition-duration: 0.4s;}
+    .button:hover {background-color: #04AA6D; color: white;}
+    .button {float: left; border: 1px solid green;}
+    .button {display: block;}
+    .button1 {width: 250px;}
+    .button2 {width: 50%;}
+    .button3 {width: 100%;}
+
+    /* Dropdown Styles */
+    .dropdown {
+      position: relative;
+      display: inline-block;
+    }
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background-color: #f9f9f9;
+      min-width: 160px;
+      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+      padding: 12px 16px;
+      z-index: 1;
+    }
+    .dropdown:hover .dropdown-content {display: block;}
+
+    /* Miscellaneous Styles */
+    body {background-image: url("paper.gif"); color: green;}
+    div {background-color: transparent; color: blue; border: 10px solid currentcolor;}
+    h1 {color: coral; text-shadow: -1px 0 black, 0 1px black, 1px 0 black, 0 -1px black;}
+    div.card {width: 250px; box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19); text-align: center;}
+    div {width: 100px; height: 100px; background: red; transition: width 2s;}
+    div:hover {width: 300px;}
+    div {transition: width 2s, height 4s;}
+    div {transition-delay: 1s;}
+    p.test1 {white-space: nowrap; width: 200px; border: 1px solid #000000; overflow: hidden; text-overflow: clip; word-break: keep-all; writing-mode: horizontal-tb;}
+    p.test2 {white-space: nowrap; width: 200px; border: 1px solid #000000; overflow: hidden; text-overflow: ellipsis; word-break: break-all; writing-mode: vertical-rl;}
+  </style>
+</head>
+<body>
+  <!-- Button Elements -->
+  <button class="button button1">Button 1</button>
+  <button class="button button2">Button 2</button>
+  <button class="button class="button button3">Button 3</button>
+  <button class="button button4">Button 4</button>
+  <button class="button button5">Button 5</button>
+
+  <!-- Dropdown Elements -->
+  <div class="dropdown">
+    <span>Mouse over me</span>
+    <div class="dropdown-content">
+      <p>Hello World!</p>
+    </div>
+  </div>
+  
+  <div class="dropdown">
+    <button class="dropbtn">Dropdown</button>
+    <div class="dropdown-content">
+      <a href="#">Link 1</a>
+      <a href="#">Link 2</a>
+      <a href="#">Link 3</a>
+    </div>
+  </div>
+
+  <!-- Miscellaneous Elements -->
+  <div class="card">Card Content</div>
+  <h1>Heading</h1>
+  <div></div>
+  <p class="test1">Test Text 1</p>
+  <p class="test2">Test Text 2</p>
+</body>
+</html>
